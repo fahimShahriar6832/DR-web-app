@@ -13,7 +13,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 #import tensorflow_hub as hub
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import tensorflow as tf
 from keras import preprocessing
 
@@ -24,8 +24,8 @@ def main():
   file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
   if file_uploaded is not None:
     image = Image.open(file_uploaded)
-    plt.imshow(image)
-    plt.axis('off')
+   # plt.imshow(image)
+    #plt.axis('off')
 
 
 def predict_class(image):
