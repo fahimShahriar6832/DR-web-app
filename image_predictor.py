@@ -15,7 +15,7 @@ from PIL import Image
 #import tensorflow_hub as hub
 #import matplotlib.pyplot as plt
 #import tensorflow 
-from keras import preprocessing
+#from keras import preprocessing
 
 
 st.header("Image Predictor")
