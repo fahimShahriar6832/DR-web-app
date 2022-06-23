@@ -21,6 +21,7 @@ from PIL import Image
 st.header("Image Predictor")
 st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
 st.text('Fixed width text')
+st.image('./header.png')
 
 def main():
   file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
