@@ -14,7 +14,7 @@ import pandas as pd
 from PIL import Image
 #import tensorflow_hub as hub
 #import matplotlib.pyplot as plt
-import tensorflow as tf
+import tensorflow 
 from keras import preprocessing
 
 
@@ -29,9 +29,9 @@ def main():
 
 
 def predict_class(image):
-  classifier_model = tf.keras.models.load_model('/DR_VGG19.h5')#Give the model path
+  classifier_model = tensorflow.keras.models.load_model('/DR_VGG19.h5')#Give the model path
   shape = ((224,224,3))#Give the shape
-  model = tf.keras.Sequential(hub[hub.KerasLayer(classifier_model,input_shape = shape)])
+  model = tensorflow.keras.Sequential(hub[hub.KerasLayer(classifier_model,input_shape = shape)])
   test_image = image.resize((224,224))
   test_image = preprocessing.image.img_to_array(test_image)
   test_image = test_image/255
