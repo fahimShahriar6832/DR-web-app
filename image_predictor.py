@@ -21,8 +21,12 @@ from PIL import Image
 st.header("Image Predictor")
 st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
 st.text('Fixed width text')
-st.image('./header.png')
-
+    html_temp = """
+    <div style="background-color:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;">Forest Fire Prediction ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp, unsafe_allow_html=True)
 def main():
   file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
   if file_uploaded is not None:
@@ -32,7 +36,7 @@ def main():
 
 
 def predict_class(image):
-  classifier_model = tensorflow.keras.models.load_model('/DR_VGG19.h5')#Give the model path
+  classifier_model = tensorflow.keras.models.load_model('DR_VGG19.h5')#Give the model path
   shape = ((224,224,3))#Give the shape
   model = tensorflow.keras.Sequential(hub[hub.KerasLayer(classifier_model,input_shape = shape)])
   test_image = image.resize((224,224))
