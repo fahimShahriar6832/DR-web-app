@@ -1,6 +1,6 @@
 import streamlit as st
 st.header("Image Predictor")
-st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
+#st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
 
 html_temp = """
 <div style="background-color:#025246 ;padding:10px">
