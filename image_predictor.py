@@ -10,12 +10,13 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
+import numpy as np
+from keras.preprocessing import image 
 import cv2
 import keras
 from keras.models import load_model
-import numpy as np
 import pandas as pd
-from PIL import Image
+
 
 def main():
   file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
