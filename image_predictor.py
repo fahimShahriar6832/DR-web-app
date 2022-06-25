@@ -5,7 +5,7 @@ st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=Tru
 html_temp = """
 <div style="background-color:#025246 ;padding:10px">
 <h2 style="color:white;text-align:center;">Try again and again!!!</h2>
-<h3 style="color:white;text-align:center;">You will crack it</h3>
+<h3 style="color:red;text-align:center;">You will crack it Fahim</h3>
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html=True)
