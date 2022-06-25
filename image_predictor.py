@@ -1,10 +1,11 @@
 import streamlit as st
 st.header("Image Predictor")
 st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
-st.text('Fixed width text')
+
 html_temp = """
 <div style="background-color:#025246 ;padding:10px">
-<h2 style="color:white;text-align:center;">Forest Fire Prediction ML App </h2>
+<h2 style="color:white;text-align:center;">Try again and again!!!</h2>
+<h3 style="color:white;text-align:center;">You will crack it</h3>
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html=True)
