@@ -1,6 +1,6 @@
 import streamlit as st
 st.header("Image Predictor")
-#st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
+
 
 html_temp = """
 <div style="background-color:#025246 ;padding:10px">
@@ -10,8 +10,8 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
-from keras.models import load_model
 import keras
+from keras.models import load_model
 import numpy as np
 import pandas as pd
 from PIL import Image
