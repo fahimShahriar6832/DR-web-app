@@ -10,6 +10,7 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
+import cv2
 import keras
 from keras.models import load_model
 import numpy as np
