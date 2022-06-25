@@ -1,10 +1,4 @@
-from keras.models import load_model
-import keras
-import numpy as np
 import streamlit as st
-import pandas as pd
-from PIL import Image
-
 st.header("Image Predictor")
 st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
 st.text('Fixed width text')
@@ -14,6 +8,12 @@ html_temp = """
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html=True)
+
+from keras.models import load_model
+import keras
+import numpy as np
+import pandas as pd
+from PIL import Image
 
 def main():
   file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
