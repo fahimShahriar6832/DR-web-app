@@ -4,11 +4,6 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 from PIL import Image
-#import tensorflow_hub as hub
-#import matplotlib.pyplot as plt
-#import tensorflow 
-#from keras import preprocessing
-
 
 st.header("Image Predictor")
 st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
