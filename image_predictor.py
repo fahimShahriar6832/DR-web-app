@@ -10,37 +10,28 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
+from PIL import Image
 import numpy as np
-from keras.preprocessing import image 
-import cv2
-import keras
 from keras.models import load_model
-import pandas as pd
 
 
-def main():
-  file_uploaded = st.file_uploader("Upload Query image", type = ['jpg','png','jpeg'])
-  if file_uploaded is not None:
-    image = Image.open(file_uploaded)
-   # plt.imshow(image)
-    #plt.axis('off')
+# load model
+Fundus_covid19 = load_model(r'DR_VGG19.h5')
+
+uploaded_file = st.file_uploader("Choose a file")
+
+im = Image.open(uploaded_file)
+
+im = im.resize((224,224))
 
 
-def predict_class(image):
-  classifier_model = tensorflow.keras.models.load_model('DR_VGG19.h5')#Give the model path
-  shape = ((224,224,3))#Give the shape
-  model = tensorflow.keras.Sequential(hub[hub.KerasLayer(classifier_model,input_shape = shape)])
-  test_image = image.resize((224,224))
-  test_image = preprocessing.image.img_to_array(test_image)
-  test_image = test_image/255
-  test_image = np.expand_dims(test_image, axis = 0)
-  result = model.predict(test_image) 
+im = np.array(im)
+im = im/255
+im = np.expand_dims(im,axis=0)
 
-  if result[0][0] > result[0][1]:
+result = Fundus_covid19.predict(im)
+
+if result[0][0] > result[0][1]:
     print("Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][0]*100)))
-  else:
-    print("NO Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][1])*100))
-
-
-if __name__ == "__main__":
-  main()
+else:
+  print("NO Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][1])*100))
