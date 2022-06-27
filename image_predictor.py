@@ -16,7 +16,7 @@ from keras.models import load_model
 
 
 # load model
-Fundus_covid19 = load_model(r'DR_VGG19.h5')
+Fundus_covid19 = load_model(r'\DR_VGG19_new.h5')
 
 uploaded_file = st.file_uploader("Choose a file")
 
