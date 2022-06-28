@@ -12,7 +12,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 from PIL import Image
 import numpy as np
-from tensorflow import keras
+from tensorflow.python import keras
 
 
 
