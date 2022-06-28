@@ -16,7 +16,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 
 # load model
-Fundus_covid19 =  tf.keras.models.load_model("Classifier.h5")
+Fundus_covid19 =  tf.keras.models.load_model("DR_VGG19_new.h5")
 
 uploaded_file = st.file_uploader("Choose a file")
 
