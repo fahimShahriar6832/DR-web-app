@@ -1,6 +1,5 @@
 streamlit==0.80.0
-tensorflow==2.2.0
-tensorflow-estimator==2.2.0
+keras==2.5.0
 Pillow==9.1.1
 
 
