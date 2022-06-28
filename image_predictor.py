@@ -1,4 +1,7 @@
 import streamlit as st
+from PIL import Image
+from keras.models import load_model
+
 st.header("Image Predictor")
 
 
@@ -10,7 +13,6 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
-from keras.models import load_model
 
 # load model
 Fundus_covid19 = load_model("DR_VGG19_new.h5")
