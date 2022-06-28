@@ -10,11 +10,9 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
-from PIL import Image
-import numpy as np
 from keras.models import load_model
 
-uploaded_file = st.file_uploader("Choose a file")
+
 
 
 
