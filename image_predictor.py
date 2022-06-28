@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from keras.models import load_model
+import tensorflow as tf
 
 st.header("Image Predictor")
 
@@ -15,7 +16,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 
 # load model
-Fundus_covid19 = load_model("DR_VGG19_new.h5")
+Fundus_covid19 =  tf.keras.models.load_model("DR_VGG19_new.h5")
 
 uploaded_file = st.file_uploader("Choose a file")
 
