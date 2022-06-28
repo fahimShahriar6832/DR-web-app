@@ -15,23 +15,4 @@ import numpy as np
 from keras.models import load_model
 
 
-# load model
-Fundus_covid19 = load_model('/DR_VGG19_new.h5')
 
-uploaded_file = st.file_uploader("Choose a file")
-
-im = Image.open(uploaded_file)
-
-im = im.resize((224,224))
-
-
-im = np.array(im)
-im = im/255
-im = np.expand_dims(im,axis=0)
-
-result = Fundus_covid19.predict(im)
-
-if result[0][0] > result[0][1]:
-    print("Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][0]*100)))
-else:
-  print("NO Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][1])*100))
