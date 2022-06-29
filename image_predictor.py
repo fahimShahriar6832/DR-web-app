@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 from keras.models import load_model
 import numpy as np
+import pickle
 
 st.header("Image Predictor")
 
@@ -24,7 +25,7 @@ if uploaded_file is not None:
     im = np.expand_dims(im,axis=0)
 
 # load model
-Fundus_covid19 = load_model("model.pkl")
+Fundus_covid19 = pickle.load(open('model.pkl', 'rb'))
 
 result = Fundus_covid19.predict(im)
 
