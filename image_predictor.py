@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from keras.models import load_model
+from keras.preprocessing import image
 
 st.header("Image Predictor")
 
@@ -13,6 +14,14 @@ html_temp = """
 st.markdown(html_temp, unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Upload a fundas image")
+
+
+
+test_image = image.load_img(uploaded_file, target_size = (224,224))
+test_image = image.img_to_array(test_image)
+test_image=test_image/255
+test_image = np.expand_dims(test_image, axis = 0)
+result = Fundus_covid19.predict(test_image)
 
 im = Image.open(uploaded_file)
 im = im.resize((224,224))
