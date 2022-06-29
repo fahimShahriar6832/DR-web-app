@@ -25,9 +25,9 @@ if uploaded_file is not None:
     im = np.expand_dims(im,axis=0)
 
 # load model
-loaded_model = load_model('DR_VGG19_new.h5')
+OCT_VGG_model = joblib.load('Mobnet.sav')
 
-result = loaded_model.predict(im)
+result = OCT_VGG_model.predict(im)
 
 if result[0][0] > result[0][1]:
     print("Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][0]*100)))
