@@ -24,8 +24,7 @@ if uploaded_file is not None:
     im = np.array(im)
     im = im/255
     im = np.expand_dims(im,axis=0)
-
-st.image(img, caption='DR')
+    st.image(img, caption='Query Image')
     
 # load model
 loaded_model = load_model('DR_VGG19_new.h5', custom_objects=None)
