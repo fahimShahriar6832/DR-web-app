@@ -3,6 +3,7 @@ from PIL import Image
 from keras.models import load_model
 from keras.preprocessing import image
 import tensorflow as tf
+import keras
 
 st.header("Image Predictor")
 
