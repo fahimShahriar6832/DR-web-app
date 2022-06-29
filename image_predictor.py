@@ -12,16 +12,16 @@ html_temp = """
 """
 st.markdown(html_temp, unsafe_allow_html=True)
 
-# load model
-Fundus_covid19 = load_model("DR_VGG19_new.h5")
-
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Upload a fundas image")
 
 im = Image.open(uploaded_file)
 im = im.resize((224,224))
 im = np.array(im)
 im = im/255
 im = np.expand_dims(im,axis=0)
+
+# load model
+Fundus_covid19 = load_model("DR_VGG19_new.h5")
 
 result = Fundus_covid19.predict(im)
 
