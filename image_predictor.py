@@ -16,6 +16,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 
 uploaded_file = st.file_uploader("Upload a fundas image")
+st.image(uploaded_file, caption='DR')
 
 if uploaded_file is not None:
     im = Image.open(uploaded_file)
