@@ -16,15 +16,17 @@ st.markdown(html_temp, unsafe_allow_html=True)
 
 
 uploaded_file = st.file_uploader("Upload a fundas image")
-st.image(uploaded_file, caption='DR')
+
 
 if uploaded_file is not None:
-    im = Image.open(uploaded_file)
-    im = im.resize((224,224))
+    img = Image.open(uploaded_file)
+    im = img.resize((224,224))
     im = np.array(im)
     im = im/255
     im = np.expand_dims(im,axis=0)
 
+st.image(img, caption='DR')
+    
 # load model
 loaded_model = load_model('DR_VGG19_new.h5', custom_objects=None)
 
