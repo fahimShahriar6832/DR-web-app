@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 from keras.models import load_model
 import numpy as np
-import pickle
 
 st.header("Image Predictor")
 
@@ -25,9 +24,9 @@ if uploaded_file is not None:
     im = np.expand_dims(im,axis=0)
 
 # load model
-Fundus_covid19 = pickle.load(open('model.pkl', 'rb'))
+loaded_model = load_model('DR_VGG19_new.h5')
 
-result = Fundus_covid19.predict(im)
+result = loaded_model.predict(im)
 
 if result[0][0] > result[0][1]:
     print("Diabetic Retinopathy [{:.2f}% accuracy]".format((result[0][0]*100)))
