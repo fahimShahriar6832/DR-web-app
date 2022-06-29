@@ -24,7 +24,7 @@ if uploaded_file is not None:
     im = np.expand_dims(im,axis=0)
 
 # load model
-Fundus_covid19 = load_model("DR_VGG19_new.h5")
+Fundus_covid19 = load_model("model.pkl")
 
 result = Fundus_covid19.predict(im)
 
